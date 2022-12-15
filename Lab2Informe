@@ -1,0 +1,42 @@
+by Daniel Celis 2041425-2711 & Alexandra Lerma 2042400-2711
+Lab2: Comportamiento de procesos con la memoria.
+--------------------------------------------------------------------------------------------
+
+
+Iniciamos creando dos archivos, uno con extención c el cual será el que porte nuestro main y el otro una archivo con extencion h en donde crearemos las funciones necesarias para el funcionamiento del programa.
+
+nuestras dos funciones seran: ExtractWord y extractMemorySize.
+
+- extractWord: diciendolo de forma resumida, esta funcion se encargará de encontrar similitudes con una palabra la cual pasaremos como parametro dentro de el archivo que le asignemos el cual también será otro parametro, comparará que tanta similutud hay en cuanto a la longitud de la palabra y los caracteres que tiene, esto ayudará a encontrar la palabra que solicitamos. el parametro tipe se encargará de ponerle un contexto a lo que se busca y presition servira para que se maneje desde que punto se quiere imprimir (esto evitara caracteres no deseados o que quicieriamos ignorar como por ejemplo los espacios).
+
+- extractMemorySize: Se utilizará para llamar a la función extract word con los parametros ya definidos por defecto, recibirá como parametro la ruta para cual se deberá realizar la busqueda. Se ha configurado para buscar la información de la memoria por dos partes la (RSS) y la (VSZ), a continuación una explicación de cada una de estas:
+
+ 
+------------------------------------------------------------------------------------------------
+
+
+* Tamaño del conjunto residente ( RSS ): 
+
+Esta es una medida de cuánta memoria consume un proceso en nuestra RAM física, para cargar todas sus páginas después de su ejecución.
+
+Esto incluye la memoria asignada de bibliotecas compartidas, dado que todavía están presentes en la memoria. Además, incluye todo el montón y la memoria de la pila.
+
+RSS no es una medida precisa del total de procesos de memoria que consumen, porque no incluye la memoria consumida por las bibliotecas que se intercambiaron. Por otro lado, las mismas bibliotecas compartidas pueden duplicarse y contarse en diferentes procesos. Sin embargo, RSS es una estimación confiable.
+
+--------------------------------------------------------------------------------------------------
+
+
+* Tamaño de memoria virtual ( VSZ ): 
+
+Esta es una medida de mucha memoria a la que un proceso puede acceder después de su ejecución.
+
+Esto incluye memoria intercambiada, la memoria de bibliotecas externas y la memoria asignada que no se usa.
+
+La mayoría de los sistemas operativos modernos basados en Linux utilizan la búsqueda de demanda, lo que significa que solo recuerdan las páginas una vez que un programa intenta usarlas.
+
+VSZ no es una medida precisa de cuánta memoria se consume, sino más bien una estimación de la cantidad total de memoria que un proceso puede consumir dentro de su ciclo de vida.
+
+
+
+
+
